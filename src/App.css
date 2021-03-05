@@ -1,38 +1,163 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+*{
+  margin: 0;
+  color: rgb(220, 220, 220);
+  font-family:'Times New Roman';
+  font-size: 18px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.opacity{
+  background-color:rgba(40, 40, 40, 0.85);
+  background-size: cover;
+}
+.opacity::after {
+  content: "";
+  background-color: rgba(40, 40, 40, 0.85);
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: 0;   
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.main{
+  display: grid;
+  z-index: 2;
+  height: 100vh;
+  width: 100vw;
+  grid-template-columns: 90px auto;
+  grid-template-rows: 60px auto;
+  grid-template-areas: "header header"
+                        "menu main";
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.item-a{
+  display: grid;
+  grid-area: header;
+  background-color: rgba(40, 40, 40);
+  grid-template-columns: 90px auto;
+  grid-template-rows: auto;
+  grid-template-areas: "logo form";
+  justify-items: stretch;
+  border: 1px solid #808080;
+}
+.item-b{
+  grid-area: menu;
+  background-color: rgba(40, 40, 40);
+  border: 1px solid #808080;
+  border-top: none;
+}
+.item-c{
+  grid-area: main;
+  display: grid;
+  grid-template-columns: auto 500px auto;
+  grid-template-rows: 150px 200px 90px;
+  grid-template-areas: ". . ."
+                        ". logoM ."
+                        ". formM .";
+}
+
+.logo{
+  grid-area:logo;
+  z-index: 2;
+}
+.login{
+  grid-area:form;
+  z-index: 2;
+}
+.logoM{
+  width: 500px;
+  height: 200px;
+  z-index: 2;
+  margin-top: 1;
+  grid-area: logoM;
+  align-self: center;
+  justify-self: center;
+}
+.formM{
+  grid-area: formM;
+  z-index: 2;
+}
+.formmm{
+    color: White;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #9e9e9e;
+    border-radius: 0;
+    outline: none;
+    height: 3rem;
+    width: 100%;
+    font-size: 16px;
+    margin: 0 0 8px 0;
+    padding: 0;
+    z-index: 2;
+}
+
+.DetailMain{
+  display: grid;
+  grid-template-columns: 20vw 20vw 40vw 20vw;
+  grid-template-rows: 20vh 10vh 70vh;
+  grid-template-areas: "Volver Avatar Nombre ."
+                        ". Avatar Tag ."
+                        " . Habilidades Habilidades .";
+}
+
+.Avatar{
+  grid-area: Avatar;
+  z-index: 3;
+  justify-self: center;
+  align-self: center;
+}
+.Nombre{
+  grid-area: Nombre;
+  align-self: center;
+  color: rgb(220, 220, 220);
+  font-size: 80px;
+  z-index: 3;
+}
+.Tag{
+  grid-area: Tag;
+  font-size: 20px;
+  z-index: 3;
+  align-self:flex-start;
+  color: rgb(220, 220, 220);
+}
+.Habilidades{
+  z-index: 3;
+  grid-area: Habilidades;
+}
+
+.HabilidadesContainer{
+  display:grid;
+  grid-template-columns: 100px 700px;
+  grid-template-rows: 30px 100px;
+  grid-template-areas: "Cosas Cosas"
+                        "Imagen Descripcion";
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-content: center;
 }
 
-.App-link {
-  color: #61dafb;
+.Descripcion{
+  grid-area: Descripcion;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Imagen{
+  grid-area: Imagen;
+}
+
+.Cosas{
+
+  grid-area: Cosas;
+  display: flex;
+  justify-content: start;
+}
+.Volver{
+  grid-area: Volver;
+  z-index: 3
+}
+
+.Cosa{
+  margin-left: 30px;
 }

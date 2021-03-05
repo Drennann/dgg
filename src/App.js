@@ -1,25 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import React, {Component}from "react";
+import Champions from "./Champions";
+import {BrowserRouter as Router} from "react-router-dom";
+import Route from "react-router-dom/Route";
+import ChampionDetail from "./ChampionDetail";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends Component {
+
+  state = {
+
+  }
+  render(){
+    return(
+      <Router>
+        <div>
+          <Route path="/dgg" exact component={Champions}/>
+          <Route path="/champion" exact component={ChampionDetail}/>
+        </div>
+      </Router>
+    )
+  }
 }
 
 export default App;
